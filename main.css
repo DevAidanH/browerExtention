@@ -3,7 +3,10 @@
   --dark_background_one: #040918;
   --dark_background_two: #091540;
   --dark_text: hsl(200, 60%, 99%);
-  --dark_appbar: hsl(225, 23%, 24%);
+  --dark_appbar: hsl(226, 25%, 17%);
+  --dark_buttons: hsl(225, 23%, 24%);
+  --dark_selected_button: hsl(3, 86%, 64%);
+  --dark_card: hsl(225, 23%, 24%);
 }
 
 /*Site wide styles*/
@@ -21,12 +24,13 @@ body{
 }
 
 /*App bar*/
-.appbar-center{
+.app-center{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10vh;
+    flex-direction: column;
 }
 .appbar{
     color: var(--dark_text);
@@ -36,6 +40,7 @@ body{
     margin-top: 5vh;
     padding: 1vw;
     border-radius: 30px;
+    margin-bottom: 5vh;
 }
 .appbar img{
     height: 7vh;
@@ -51,8 +56,40 @@ body{
 }
 
 /*Sorting buttons*/
+.title-sorting-bar{
+    display: flex;
+    align-items: center;
+    padding: 1vw;
+    justify-content: space-between;
+    width: 90%;
+}
+.title-sorting-bar .sorting button{
+    padding: 10px 20px;
+    margin: 0px 5px;
+    background-color: var(--dark_buttons);
+    color: var(--dark_text);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.title-sorting-bar .sorting .selected{
+    background-color: var(--dark_selected_button);
+    color: var(--dark_background_one);
+}
 
-
+/*Cards*/
+#extensions-list{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-count: 2;
+}
+.extension-item{
+    background-color: var(--dark_card);
+    width: 25vw;
+}
 
 /*Frontend mentor code*/
 .attribution { font-size: 11px; text-align: center; }
