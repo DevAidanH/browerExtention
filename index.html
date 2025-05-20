@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+
+  <link href="main.css" rel="stylesheet" type="text/css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script>
+    // Lightmode/Darkmode toggle
+    function toggleLightMode() {
+      const body = document.body;
+      const img = document.getElementById("mode-icon");
+
+      body.classList.toggle("lightmode");
+
+      if (body.classList.contains("lightmode")) {
+        img.src = "assets/icon-moon.svg"; 
+        img.alt = "Dark mode icon";
+      } else {
+        img.src = "assets/icon-sun.svg"; 
+        img.alt = "Light mode icon";
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <div class="app-center">
+    <div class="appbar">
+      <img src="assets/logo.svg" />
+      <button onclick="toggleLightMode()">
+        <img id="mode-icon" src="assets/icon-sun.svg" alt="Light mode icon"/>
+      </button>
+    </div>
+
+
+    <div class="title-sorting-bar">
+      <h1>Extensions List</h1>
+      <div class="sorting">
+        <button class="selected">All</button>
+        <button>Active</button>
+        <button>Inactive</button>
+      </div>
+    </div>
+
+  
+
+    <div id="extensions-list"></div>
+    <script src="read_data.js"></script>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/DevAidanH">Dev Aidan H</a>.
+  </div>
+</body>
+</html>

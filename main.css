@@ -1,0 +1,217 @@
+/* Dark mode default variables */
+:root {
+  --background_one: #040918;
+  --background_two: #091540;
+  --text: hsl(200, 60%, 99%);
+  --appbar: hsl(226, 25%, 17%);
+  --buttons: hsl(225, 23%, 24%);
+  --selected_button: hsl(3, 86%, 64%);
+  --hover_buttons: hsl(3, 77%, 44%);
+}
+
+/* Light mode variables */
+body.lightmode {
+  --background_one: #EBF2FC;
+  --background_two: #EEF8F9;
+  --text: hsl(227, 75%, 14%);
+  --appbar: #ffffff;
+  --buttons: #cbd6e2;
+  --selected_button: #ff5e57;
+  --hover_buttons: #c14444;
+
+  background-image: linear-gradient(180deg, var(--background_one) 0%, var(--background_two) 100%);
+  color: var(--text);
+}
+
+/* Site wide styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+  background-image: linear-gradient(180deg, var(--background_one) 0%, var(--background_two) 100%);
+  color: var(--text);
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* App bar */
+.app-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+  flex-direction: column;
+}
+.appbar {
+  color: var(--text);
+  background-color: var(--appbar);
+  width: 90%;
+  height: 7vh;
+  margin-top: 5vh;
+  padding: 1vw;
+  border-radius: 30px;
+  margin-bottom: 5vh;
+}
+.appbar img {
+  height: 7vh;
+}
+.appbar button {
+  float: right;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.appbar button img {
+  height: 7vh;
+}
+
+/* Sorting buttons */
+.title-sorting-bar {
+  display: flex;
+  align-items: center;
+  padding: 1vw;
+  justify-content: space-between;
+  width: 90%;
+}
+.title-sorting-bar .sorting button {
+  padding: 10px 20px;
+  margin: 0px 5px;
+  background-color: var(--buttons);
+  color: var(--text);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.title-sorting-bar .sorting .selected {
+  background-color: var(--selected_button);
+  color: var(--background_one);
+}
+
+/* Cards */
+#extensions-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 15px;
+}
+.extension-item {
+  background-color: var(--appbar);
+  width: 28%;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 20px;
+}
+.extension-info {
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.extension-text {
+  margin: 10px 15px;
+}
+.extension-text h3,
+.extension-text p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.extension-info img {
+  width: 15%;
+  margin-top: 10px;
+}
+.extension-checkbox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.extension-checkbox button {
+  background-color: transparent;
+  border: 1px solid var(--text);
+  border-radius: 20px;
+  color: var(--text);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.extension-checkbox button:hover {
+  color: var(--background_two);
+  background-color: var(--selected_button);
+  border: 1px solid var(--selected_button);
+}
+
+/* W3Schools Slider Button CSS */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 27.2px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--buttons);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20.8px;
+  width: 20.8px;
+  left: 3.2px;
+  bottom: 3.2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--selected_button);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--buttons);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20.8px);
+  -ms-transform: translateX(20.8px);
+  transform: translateX(20.8px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 27.2px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Frontend mentor code */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
