@@ -6,30 +6,56 @@ fetch("data.json")
   .then(data => {
     const list = document.getElementById("extensions-list");
     data.forEach(pkg => {
-      //Div
+      // Outer container
       const extensionDiv = document.createElement("div");
       extensionDiv.classList.add("extension-item");
-      
-      //Extension image
+
+      // Info container: img, h3, p
+      const infoDiv = document.createElement("div");
+      infoDiv.classList.add("extension-info");
+
       const imageElement = document.createElement("img");
       imageElement.src = pkg.logo;
-      extensionDiv.appendChild(imageElement);
+      infoDiv.appendChild(imageElement);
 
-      //Extension name
+      const textDiv = document.createElement("div");
+      textDiv.classList.add("extension-text");
+
       const nameElement = document.createElement("h3");
       nameElement.textContent = pkg.name;
-      extensionDiv.appendChild(nameElement);
+      textDiv.appendChild(nameElement);
 
-      //Extension Subtitle
       const subtitleElement = document.createElement("p");
       subtitleElement.textContent = pkg.description;
-      extensionDiv.appendChild(subtitleElement);
+      textDiv.appendChild(subtitleElement);
 
-      //Extension Subtitle
-      const checkBoxElement = document.createElement("input");
-      checkBoxElement.type = "checkbox";
-      checkBoxElement.checked = pkg.isActive;
-      extensionDiv.appendChild(checkBoxElement);
+      infoDiv.appendChild(textDiv);
+
+      // Checkbox container
+      const checkboxDiv = document.createElement("div");
+      checkboxDiv.classList.add("extension-checkbox");
+
+      const buttonElement = document.createElement("button");
+      buttonElement.textContent = "Remove";
+      checkboxDiv.appendChild(buttonElement);
+
+      const label = document.createElement("label");
+      label.classList.add("switch");
+
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = pkg.isActive;
+
+      const span = document.createElement("span");
+      span.classList.add("slider", "round");
+
+      label.appendChild(input);
+      label.appendChild(span);
+      checkboxDiv.appendChild(label);
+
+      // Append child divs to the main extension div
+      extensionDiv.appendChild(infoDiv);
+      extensionDiv.appendChild(checkboxDiv);
 
       list.appendChild(extensionDiv);
     });
