@@ -4,8 +4,11 @@ A Frontend design challenge completed in HTML, CSS, Vanilla JS and deployed with
 
 ### Live Link
 
-> 
+> https://devaidanh.github.io/browerExtention/
 
 ### Screenshots
 
+| Screenshot |
+|------------|
+| ![Home Screen](/screenshots/homepage.png?raw=true ) |
 
